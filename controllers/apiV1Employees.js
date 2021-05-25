@@ -13,7 +13,7 @@ module.exports.findOne = async (req, res, next) => {
 module.exports.findAll = async (req, res, next) => {
     let order = '';
 
-    //robic walidacje tego
+    // robic walidacje tego
     if(req.query.sort_by && req.query.sort_direction) {
         order = [[req.query.sort_by, req.query.sort_direction]];
     }
