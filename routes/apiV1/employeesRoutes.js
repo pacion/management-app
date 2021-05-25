@@ -1,24 +1,19 @@
 const { Router } = require('express');
 
 const employeesController  = require('../../controllers/apiV1Employees');
-const { catchAsync } = require('../middlewares/errors');
+const { catchAsync } = require('../../middlewares/errors');
 
 const router = Router();
 
 
 //get /:id
-router.get('/:id', (req, res) => {
-    //const { id } = req.params;
-    res.send('get single');
- });
+router.get('/:id', catchAsync(employeesController.findOne));
 
 //get all
 router.get('', catchAsync(employeesController.findAll));
 
 //post
-router.post('', (req, res) => {
-    res.send('post');
-});
+router.post('', catchAsync(employeesController.create));
 
 //put
 router.put('', (req, res) => {
@@ -26,8 +21,6 @@ router.put('', (req, res) => {
 });
 
 //delete
-router.delete('', (req, res) => {
-    res.send('del');
-});
+router.delete('/:id', catchAsync(employeesController.delete));
 
 module.exports = router;
