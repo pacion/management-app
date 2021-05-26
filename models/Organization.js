@@ -9,12 +9,13 @@ const Organization = db.define('Organization', {
     },
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+
     },
     location: {
         type: Sequelize.STRING,
-        allowNull: false
+
     }
 });
+Organization.removeAttribute('id');
 
 module.exports = Organization;

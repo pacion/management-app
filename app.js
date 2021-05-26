@@ -15,7 +15,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.set('view engine', 'pug');
 
-
 app.use('/api', apiVersionRoutes);
 
 app.use(notFound);

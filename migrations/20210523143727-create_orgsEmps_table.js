@@ -5,11 +5,11 @@ module.exports = {
         return queryInterface.createTable("orgsEmps", {
             org_id: {
                 type: Sequelize.INTEGER,
-                allowNull: false
+
             },
             emp_id: {
                 type: Sequelize.INTEGER,
-                allowNull: false
+
             },
             createdAt: Sequelize.DATE,
             updatedAt: Sequelize.DATE
