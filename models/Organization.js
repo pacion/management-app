@@ -2,7 +2,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/db');
 
-const Organization = db.define('Organization', {
+const Organization = db.define('organization', {
     org_id: {
         type: Sequelize.INTEGER,
         allowNull: false

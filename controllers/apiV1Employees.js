@@ -53,6 +53,7 @@ module.exports.create = async (req, res, next) => {
             password: req.body.password,
             phone_number: req.body.phone_number,
             hire_date: req.body.hire_date,
+            job_id: req.body.job_id
         }).save();
         const orgsEmps = await new OrgsEmps({
             org_id: null,

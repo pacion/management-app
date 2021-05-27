@@ -5,22 +5,27 @@ const Organization = require('../models/Organization');
 const OrgsEmps = require('../models/OrgsEmps');
 const Salary = require('../models/Salary');
 
-Employee.hasOne(Job, { foreignKey: 'job_id'});
-Job.belongsTo(Employee, { foreignKey: 'job_id'});
 
-/*Salary.hasOne(Employee, { foreignKey: 'emp_id'});
-Employee.belongsTo(Salary);
 
-OrgsEmps.hasMany(Organization, { foreignKey: 'org_id'});
-OrgsEmps.belongsTo(OrgsEmps);
+/*Employee.hasOne(OrgsEmps, { foreignKey: 'emp_id'});
+OrgsEmps.belongsTo(Employee, { foreignKey: 'emp_id'});
 
-OrgsEmps.hasOne(Employee, { foreignKey: 'emp_id'});
-Employee.belongsTo(OrgsEmps);*/
+Job.hasOne(Employee, { foreignKey: 'job_id'});
+Employee.belongsTo(Job, { foreignKey: 'job_id'});
+
+Employee.hasOne(Salary, { foreignKey: 'emp_id'});
+Salary.belongsTo(Employee, { foreignKey: 'emp_id' });*/
+
+
+//OrgsEmps.hasMany(Organization, { foreignKey: 'org_id' }); //doesnt work
+//Organization.belongsTo(OrgsEmps, { foreignKey: 'org_id' });
 
 module.exports.findFromAllTables = async (req, res, next) => {
     const { id } = req.params;
     console.log(req.params);
 
-    const employees = await Employee.findAll({where: {'emp_id': id}, include: Job});
+    //const employees = await OrgsEmps.findAll({include: Organization});
+
+    //const employees = await Employee.findAll({include: [Salary, Job, OrgsEmps]});
     res.json(employees);
 }

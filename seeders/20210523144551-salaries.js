@@ -17,7 +17,10 @@ module.exports = {
                 }, {
                     emp_id: 4,
                     salary: 800
-                },
+                }, {
+                    emp_id: 5,
+                    salary: 800
+                }
             ],
             {}
         );
