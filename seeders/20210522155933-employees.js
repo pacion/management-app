@@ -1,5 +1,5 @@
 'use strict';
-
+//wytestowac emp id bo przy sedowaniu nie mozna 5 uzytkownikow doda cos sie jebie
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         return await queryInterface.bulkInsert(

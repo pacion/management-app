@@ -16,7 +16,7 @@ router.get('', catchAsync(employeesController.findAll));
 router.post('', catchAsync(employeesController.create));
 
 //put
-//router.put('', catchAsync(employeesController.update));
+router.put('/:id', catchAsync(employeesController.update));
 
 //delete
 router.delete('/:id', catchAsync(employeesController.delete));

@@ -5,7 +5,6 @@ module.exports = {
         return queryInterface.createTable("salaries", {
             emp_id: {
                 type: Sequelize.INTEGER,
-
             },
             salary: {
                 type: Sequelize.INTEGER

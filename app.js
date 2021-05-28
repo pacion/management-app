@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const pug = require('pug');
 const apiVersionRoutes = require('./routes/apiVersionRoutes');
+
 const { notFound, catchErrors } = require('./middlewares/errors');
 
 const app = express();

@@ -2,15 +2,13 @@
 const Sequelize = require('sequelize');
 const db = require('../config/db');
 
-const OrgsEmps = db.define('orgsEmps', {
+const Branch = db.define('branch', {
     org_id: {
         type: Sequelize.INTEGER,
-
     },
     emp_id: {
         type: Sequelize.INTEGER,
-
     }
 });
-OrgsEmps.removeAttribute('id');
-module.exports = OrgsEmps;
+Branch.removeAttribute('id');
+module.exports = Branch;

@@ -11,7 +11,6 @@ const Job = db.define('job', {
     },
     title: {
         type: Sequelize.STRING,
-
     }
 });
 
