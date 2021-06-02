@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const authController  = require('../../controllers/apiV1Auth');
+const authController  = require('../../controllers/apiV1/apiV1Auth');
 
 
 const router = Router();

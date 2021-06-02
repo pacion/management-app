@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const pug = require('pug');
 const apiVersionRoutes = require('./routes/apiVersionRoutes');
+const frontRoutes = require('./routes/front/frontRoutes');
+const authMiddleware = require('./middlewares/auth');
 
 const { notFound, catchErrors } = require('./middlewares/errors');
 
@@ -16,7 +18,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.set('view engine', 'pug');
 
-app.use('/api', apiVersionRoutes);
+app.get('*', authMiddleware.checkUser);
+app.use('/api', apiVersionRoutes); // api - back
+app.use('', frontRoutes) // user - front
+
+
 
 app.use(notFound);
 app.use(catchErrors);

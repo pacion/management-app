@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const organizationsController  = require('../../controllers/apiV1Organizations');
+const organizationsController  = require('../../controllers/apiV1/apiV1Organizations');
 const { catchAsync } = require('../../middlewares/errors');
 
 const router = Router();

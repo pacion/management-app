@@ -1,9 +1,9 @@
-const db = require('../config/db')
-const Employee = require('../models/Employee');
+const db = require('../../config/db')
+const Employee = require('../../models/Employee');
 
-const Branch = require('../models/Branch');
-const Salary = require('../models/Salary');
-const { destroy } = require('../models/Employee');
+const Branch = require('../../models/Branch');
+const Salary = require('../../models/Salary');
+const { destroy } = require('../../models/Employee');
 
 const { hashPassword } = require('./apiV1Auth');
 
@@ -85,7 +85,7 @@ module.exports.update = async (req, res) => {
         employee.password = password; 
         employee.email = req.params.email;
         employee.phone_number = req.params.phone_number;
-        employee.hire_date = req.params.hire_date;
+        //employee.hire_date = req.params.hire_date;
         employee.job_id = req.params.job_id;
     employee.save();
 

@@ -1,6 +1,6 @@
-const db = require('../config/db')
+const db = require('../../config/db')
 
-const Job = require('../models/Job');
+const Job = require('../../models/Job');
 
 module.exports.findAll = async (req, res, next) => {
     const jobs = await Job.findAll({attributes: { exclude: [ 'createdAt', 'updatedAt'] } });

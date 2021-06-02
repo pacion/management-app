@@ -1,5 +1,5 @@
 function notFound (req, res, next) {
-    const err = new Error('404 page not found');
+    const err = new Error('404 page not found'); // udoskonalic api jak tu
     err.status = 404;
     next(err);
 }
@@ -11,7 +11,7 @@ function catchAsync (fn) {
 }
 function catchErrors (err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error.pug', {
+    return res.render('error.pug', {
         message: err.message,
         status: err.status || 500
     });

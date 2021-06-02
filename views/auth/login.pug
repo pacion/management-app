@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    include ../partials/head.pug
+    body
+    main(class="main ")
+        h1(class="h1 ") Management
+        form(class="login" method="post")
+            input(class="input" name="email" type="email" placeholder="email")
+            input(class="input" name="password" type="password" placeholder="password")
+            p(class="message" style="margin-top: -5px")
+            button(type="submit" class="btn") login
+
+        script.
+            const form = document.querySelector('form');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                try {
+                    const res = await fetch('/api/v1/auth/login', { 
+                        method: 'POST',
+                        body: JSON.stringify({ email: form.email.value, password: form.password.value }),
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                    console.log(res);
+                    const data = await res.json();
+                    
+                    console.log(data)
+                    if(data.message) {
+                        document.querySelector('p').innerHTML = data.message;
+                    }
+                    if(data.user) {
+                        window.location = '/me';
+                    }
+                    
+                } catch (e) {
+                    console.log(e);
+                }
+
+            })
+
+        

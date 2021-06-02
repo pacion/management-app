@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const detailsController  = require('../../controllers/apiV1Details');
+const detailsController  = require('../../controllers/apiV1/apiV1Details');
 const { catchAsync } = require('../../middlewares/errors');
 
 const router = Router({ mergeParams: true });

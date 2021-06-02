@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    include ../partials/head.pug
+    body
+    main(class="main management-main")
+        nav()
+            h1(class="h1 nav-h1") Management
+
+            mixin menu(name, where, bool)
+                if bool
+                    a.unique(href=where)= name
+                else
+                    a(href=where)= name
+
+            div.menu
+                +menu(name, '/me', '')
+                +menu('dg', '', '')
+                +menu('pg', '', '')
+                +menu('logout', '/logout', '1')
+            
+            script.
+                const logout = document.querySelectorAll('[href="/logout"]');
+                logout[0].addEventListener('click', () => {
+                    window.location = '/logout';
+                });
+
+        
+            
+        section(class="section")
+            h2(class="h2") Me
+            div(class="flex-articles")
+                article(class="article")
+                    h3 Employee
+                    p First name: #{data.first_name}
+                    p Last name: #{data.last_name}
+                    p Gender: #{data.gender}
+                    p Email: #{data.email}
+                    p Phone number: #{data.phone_number}
+                    p Hire date: #{data.hire_date}
+                article(class="article")
+                    h3 Salary
+
+                    if data.salary.value
+                        p= 'Value:' + data.salary.value 
+                    else
+                        p Value not set
+         
+                article(class="article")
+                    h3 Job
+                    p Title: #{data.job.title}
+
+                article(class="article")
+                    h3 Organization
+                    
+            
+
+        
+        

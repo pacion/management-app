@@ -1,9 +1,9 @@
-const db = require('../config/db')
-const Employee = require('../models/Employee');
-const Job = require('../models/Job');
-const Organization = require('../models/Organization');
-const Branch = require('../models/Branch');
-const Salary = require('../models/Salary');
+const db = require('../../config/db')
+const Employee = require('../../models/Employee');
+const Job = require('../../models/Job');
+const Organization = require('../../models/Organization');
+const Branch = require('../../models/Branch');
+const Salary = require('../../models/Salary');
 
 
 

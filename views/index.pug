@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    include partials/head.pug
+    body
+    main(class="main index-main")
+        h1(class="h1 index-h1") Management
+        nav(class="index-nav nav")
+            button(type="button" id="login" class="btn index-btn") login
+            button(type="button" id="register" class="btn index-btn") register
+
+        script.
+            document.querySelector('#login').addEventListener('click', () => {
+                window.location.href = "/login";
+            });
+            document.querySelector('#register').addEventListener('click', () => {
+                window.location.href = "/register";
+            });
